@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'VT323', monospace;
+            background-color: #000;
+            color: #0f0;
+            overflow-x: hidden;
+        }
+        .container {
+            padding: 40px;
+            text-align: center;
+        }
+        h1 {
+            text-shadow: 0 0 10px #0f0;
+        }
+        .certifications {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .cert-card {
+            width: 300px;
+            border: 2px solid #0f0;
+            box-shadow: 0 0 15px #0f0;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cert-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px cyan;
+        }
+        a {
+            color: cyan;
+            text-decoration: none;
+        }
+        a:hover {
+            text-shadow: 0 0 10px cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Certification Showcase</h1>
+        <div class="certifications">
+            <div class="cert-card">
+                <h2>CEH Certification</h2>
+                <p>Certified Ethical Hacker from EC-Council.</p>
+                <a href="#">View Certification</a>
+            </div>
+            <div class="cert-card">
+                <h2>OSCP</h2>
+                <p>Offensive Security Certified Professional.</p>
+                <a href="#">View Certification</a>
+            </div>
+            <div class="cert-card">
+                <h2>CompTIA Security+</h2>
+                <p>Core cybersecurity skills certification.</p>
+                <a href="#">View Certification</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

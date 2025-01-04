@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M435</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'VT323', monospace;
+            background-color: #000;
+            color: #0f0;
+            overflow: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        #terminal {
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border: 2px solid #0f0;
+            box-shadow: 0 0 20px #0f0;
+            margin-bottom: 20px;
+        }
+        #output {
+            white-space: pre-wrap;
+            height: 300px;
+            overflow-y: auto;
+        }
+        .blinker {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        iframe {
+            width: 80%;
+            max-width: 800px;
+            height: 200px;
+            border: none;
+        }
+        a {
+            color: cyan;
+            text-decoration: none;
+        }
+        a:hover {
+            text-shadow: 0 0 10px cyan;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="terminal">
+            <div id="output"></div>
+            <div><span class="blinker">_</span></div>
+        </div>
+        <iframe src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=1965026" style="width: 100%; height: 200px; border: none;"></iframe>
+    </div>
+
+    <script>
+        const output = document.getElementById('output');
+        const commands = [
+            'Initializing system...',
+            'Loading user profile...',
+            'Accessing mainframe...',
+            'Welcome to M435 domain.',
+            '-----------------------------',
+            'whoami: <strong>Mariglen Allushi</strong>',
+            'skills: [ Python, C#, Ethical Hacking, Red Team, Web Dev, AI, Data Engineer ]',
+            'projects: <a href="#">View Projects</a>',
+            'certifications: <a href="showcase.html">Showcase</a>',
+            'contact: <a href="#">Reach Me</a>',
+            'System ready for commands...'
+        ];
+
+        let i = 0;
+        function typeCommand() {
+            if (i < commands.length) {
+                output.innerHTML += '> ' + commands[i] + '\n';
+                i++;
+                setTimeout(typeCommand, 700);
+            }
+        }
+        typeCommand();
+    </script>
+</body>
+</html>
